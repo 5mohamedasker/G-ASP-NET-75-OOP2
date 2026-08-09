@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Drawing;
+using System.Security.Cryptography.X509Certificates;
 
 namespace OOPAssignment02
 {
@@ -62,6 +63,53 @@ namespace OOPAssignment02
              
              */
             #endregion
+
+            Console.WriteLine("Enter Delivery Center Name: ");
+            DeliveryCenter Center = new (20, Console.ReadLine());
+
+
+
+            DeliveryAddress deliveryAddress1 = new("Naser","Abas",12);
+            StandardShipment standardShipment = new("aa_11", "Phon", 0.250, 60, deliveryAddress1);
+
+            DeliveryAddress deliveryAddress2 = new("Alex","halawlaw", 15);
+            ExpressShipment expressShipment = new("bb_22", "laptop",4, 80, deliveryAddress2,30);
+
+            DeliveryAddress deliveryAddress3 = new("Geza", "Haram", 9);
+            InternationalShipment internationalShipment = new("cc_33", "Screen", 9, 110, deliveryAddress3,"Germany",100);
+
+
+
+            if (Center.AddShipment(standardShipment))
+                Console.WriteLine("\nShipment added successfullu.");
+
+            if (Center.AddShipment(expressShipment))
+                Console.WriteLine("Shipment added successfullu.");
+
+            if (Center.AddShipment(internationalShipment))
+                Console.WriteLine("Shipment added successfullu.\n");
+
+
+
+            Console.WriteLine("=========================================");
+            Console.WriteLine($"Delivery Center : {Center.CenterName}");
+            Console.WriteLine("=========================================");
+
+            Center.PrintAllShipments();
+
+            Console.WriteLine("\nEnter Tracking Code to Remove: ");
+
+
+            if (Center.RemoveShipment(Console.ReadLine()))
+                Console.WriteLine("\nShipment Removed Successfully\n");
+
+            Console.WriteLine("=========================================");
+            Console.WriteLine("Remaining Shipments");
+            Console.WriteLine("=========================================");
+
+            Center.PrintAllShipments();
+
+
         }
     }
 }
