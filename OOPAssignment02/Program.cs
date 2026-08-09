@@ -1,4 +1,6 @@
-﻿namespace OOPAssignment02
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace OOPAssignment02
 {
     internal class Program
     {
@@ -34,6 +36,31 @@
               and provides features not available elsewhere.
 
             */
+            #endregion
+            #region Question02
+            //  public class Shibment
+            //  {
+            //         public string TrackingCode { get; set; }
+            //  }
+            //
+            //  public class ExpressShibment : Shibment 
+            //  {
+            //         public decimal ExtraFe {  get; set; }
+            //  }
+            //
+            // a) Which class is the parent class? Shibment
+            //
+            // b) Which class is the child class?  ExpressShibment 
+            //
+            // c) What members are inherited by ExpressShipment?  public string TrackingCode { get; set; }
+            //
+            /* d) Why is inheritance better than duplicating the same code in multiple classes?
+                    - Organize the code better, especially when there is a logical relationship between the classes.
+                    - Easy to modify and maintain
+                    - Make the code Reusable.
+                    - Avoid repeating the code as much as possible.
+             
+             */
             #endregion
         }
     }
